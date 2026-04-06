@@ -1637,6 +1637,17 @@
 
         if (!insertRes.ok) throw new Error('Submission failed');
 
+        // 3. Notify emailer to send welcome email + log to Google Sheets
+        try {
+          await fetch('https://lcm-gtk-production.up.railway.app/webhook', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: data.email, full_name: data.full_name }),
+          });
+        } catch (e) {
+          // Don't block enrollment if emailer is temporarily down
+        }
+
         // Show success
         enrollForm.classList.add('hidden');
         enrollSuccess.classList.remove('hidden');
