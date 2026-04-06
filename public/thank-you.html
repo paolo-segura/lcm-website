@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In! | Leadership Coaching MasterClass</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lcm-red': '#C0392B',
+            'lcm-deep-red': '#8B1A1A',
+            'lcm-ink': '#1A1A1A',
+            'lcm-cream': '#FAFAF8',
+            'lcm-rule': '#E8E0D8',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; }
+    .fade-in { animation: fadeIn 0.8s ease forwards; }
+    .fade-in-delay { animation: fadeIn 0.8s ease 0.3s forwards; opacity: 0; }
+    .fade-in-delay-2 { animation: fadeIn 0.8s ease 0.6s forwards; opacity: 0; }
+    .fade-in-delay-3 { animation: fadeIn 0.8s ease 0.9s forwards; opacity: 0; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-lcm-cream text-lcm-ink min-h-screen flex flex-col">
+
+  <!-- Main content -->
+  <main class="flex-1 flex items-center justify-center px-6 py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+
+      <!-- Checkmark -->
+      <div class="fade-in mb-8">
+        <div class="inline-flex items-center justify-center w-20 h-20 border-2 border-lcm-red rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="fade-in-delay font-display text-4xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tight mb-6">
+        You're <em class="text-lcm-red italic">officially</em> in.
+      </h1>
+
+      <!-- Subtext -->
+      <p class="fade-in-delay-2 text-lg md:text-xl text-lcm-ink/60 font-light leading-relaxed max-w-lg mx-auto mb-4">
+        Thank you for enrolling in <strong class="text-lcm-ink font-medium">Leadership Coaching MasterClass &mdash; Cohort 20</strong>.
+      </p>
+
+      <p class="fade-in-delay-2 text-base text-lcm-ink/50 font-light leading-relaxed max-w-lg mx-auto mb-10">
+        We&rsquo;ve received your registration and proof of payment. You&rsquo;ll receive an email with all the details you need &mdash; venue, schedule, what to prepare &mdash; as we get closer to the event.
+      </p>
+
+      <!-- Event details card -->
+      <div class="fade-in-delay-2 inline-block border border-lcm-rule bg-white px-8 py-6 mb-12 text-left">
+        <p class="text-xs text-lcm-ink/40 uppercase tracking-wider font-medium mb-3">Mark your calendar</p>
+        <p class="font-display text-2xl tracking-tight mb-1">May 30 &ndash; 31, 2026</p>
+        <p class="text-sm text-lcm-ink/50">9:00 AM &ndash; 6:00 PM &middot; Manila</p>
+      </div>
+
+      <!-- Coach Gina quote -->
+      <div class="fade-in-delay-3 pt-8 border-t border-lcm-rule max-w-md mx-auto">
+        <p class="font-display text-lg md:text-xl italic text-lcm-ink/70 leading-relaxed mb-6">
+          &ldquo;Taking this time to honor you for your commitment to your next level in your Leadership Mastery! I am excited to share this knowledge and space with you LIVE!&rdquo;
+        </p>
+        <img src="images/gina-sig.png" alt="Coach Gina Katigbak" class="h-16 md:h-20 w-auto mx-auto mb-2" style="filter: invert(1);" />
+        <p class="text-sm text-lcm-ink/40 font-medium">Coach Gina Katigbak</p>
+      </div>
+
+      <!-- Back link -->
+      <div class="fade-in-delay-3 mt-12">
+        <a href="/" class="text-sm text-lcm-ink/40 hover:text-lcm-red transition-colors underline underline-offset-4 decoration-lcm-rule hover:decoration-lcm-red">
+          &larr; Back to homepage
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

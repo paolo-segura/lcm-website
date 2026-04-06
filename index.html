@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Coaching MasterClass | Coach Gina Katigbak</title>
+  <meta name="description" content="A 2-day live immersive workshop that will develop your coaching skills and transform how you lead teams, close sales, and grow your business. Cohort 20 — May 30–31, 2026." />
+  <meta property="og:title" content="Leadership Coaching MasterClass | Coach Gina Katigbak" />
+  <meta property="og:description" content="A 2-day live immersive workshop that will develop your coaching skills and transform how you lead teams, close sales, and grow your business. Cohort 20 — May 30–31, 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/gina-photo.jpg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon-180.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lcm-red': '#C0392B',
+            'lcm-deep-red': '#8B1A1A',
+            'lcm-ink': '#1A1A1A',
+            'lcm-cream': '#FAFAF8',
+            'lcm-white': '#FFFFFF',
+            'lcm-rule': '#E8E0D8',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; }
+
+    /* Scroll-triggered fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* FAQ accordion */
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .faq-body.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .mobile-nav.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    /* Pricing coupon message */
+    .coupon-message {
+      display: none;
+    }
+    .coupon-message.show {
+      display: flex;
+    }
+
+    /* Enrollment modal */
+    .enroll-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .enroll-overlay.open { opacity: 1; pointer-events: auto; }
+    .enroll-modal {
+      background: #FAFAF8; max-width: 640px; width: 92%;
+      max-height: 90vh; overflow-y: auto;
+      border: 1px solid #E8E0D8;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+    .enroll-overlay.open .enroll-modal { transform: translateY(0); }
+    .enroll-modal::-webkit-scrollbar { width: 4px; }
+    .enroll-modal::-webkit-scrollbar-thumb { background: #C0392B; border-radius: 2px; }
+
+    /* File upload drop zone */
+    .file-drop { border: 2px dashed #E8E0D8; transition: border-color 0.2s, background 0.2s; }
+    .file-drop.dragover { border-color: #C0392B; background: rgba(192,57,43,0.04); }
+
+    /* Section background photos */
+    .section-bg-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .section-bg-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body class="bg-lcm-cream text-lcm-ink">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-lcm-cream/90 backdrop-blur-md border-b border-lcm-rule/50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      <a href="#" class="flex items-center gap-3">
+        <img src="public/images/logo-full.png" alt="Leadership Coaching MasterClass" class="h-16 md:h-20 w-auto" />
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#program" class="text-sm font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors duration-200 tracking-wide uppercase">Program</a>
+        <a href="#facilitator" class="text-sm font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors duration-200 tracking-wide uppercase">About</a>
+        <a href="#testimonials" class="text-sm font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors duration-200 tracking-wide uppercase">Testimonials</a>
+        <a href="#pricing" class="text-sm font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors duration-200 tracking-wide uppercase">Investment</a>
+        <a href="#faq" class="text-sm font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors duration-200 tracking-wide uppercase">FAQ</a>
+        <a href="#enroll" class="bg-lcm-red text-white px-6 py-2.5 text-sm font-medium tracking-wide uppercase hover:bg-lcm-deep-red transition-colors duration-200">Reserve Your Seat</a>
+      </div>
+
+      <!-- Hamburger button -->
+      <button id="hamburger-btn" class="md:hidden p-2 text-lcm-ink" aria-label="Toggle menu">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="hidden">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-nav" class="mobile-nav md:hidden bg-lcm-cream border-t border-lcm-rule">
+      <div class="px-6 py-6 flex flex-col gap-4">
+        <a href="#program" class="nav-link text-base font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors">Program</a>
+        <a href="#facilitator" class="nav-link text-base font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors">About</a>
+        <a href="#testimonials" class="nav-link text-base font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors">Testimonials</a>
+        <a href="#pricing" class="nav-link text-base font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors">Investment</a>
+        <a href="#faq" class="nav-link text-base font-medium text-lcm-ink/70 hover:text-lcm-red transition-colors">FAQ</a>
+        <a href="#enroll" class="nav-link bg-lcm-red text-white px-6 py-3 text-sm font-medium tracking-wide uppercase text-center hover:bg-lcm-deep-red transition-colors mt-2">Reserve Your Seat</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="relative min-h-screen flex items-center bg-lcm-ink overflow-hidden pt-20">
+    <!-- Background ambient video -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none">
+      <iframe
+        src="https://www.youtube.com/embed/eMmZUHJt0Tk?start=3&autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=eMmZUHJt0Tk"
+        class="w-full h-full"
+        style="border:0; transform:scale(1.5); transform-origin:center center;"
+        allow="autoplay; encrypted-media"
+        title="LCM Background"
+      ></iframe>
+    </div>
+
+    <!-- Gradient overlays -->
+    <div class="absolute inset-0 bg-gradient-to-r from-lcm-ink via-lcm-ink/95 to-lcm-ink/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-lcm-ink via-transparent to-lcm-ink/50"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full py-20">
+      <div class="max-w-3xl mx-auto text-center">
+
+        <!-- Logo -->
+        <div class="mb-8 fade-up">
+          <img src="public/images/logo-full.png" alt="Leadership Coaching MasterClass" class="h-36 md:h-42 w-auto mx-auto" />
+        </div>
+
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-6 fade-up">
+          Cohort 20 &middot; May 30&ndash;31, 2026 &middot; Manila
+        </p>
+
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight text-white mb-8 fade-up">
+          Lead with <em class="text-lcm-red italic">clarity.</em><br />
+          Coach with impact.
+        </h1>
+
+        <p class="text-white/60 text-lg md:text-xl leading-relaxed max-w-[50ch] mx-auto mb-10 font-light fade-up">
+          A 2-day live immersive experience that will develop your coaching
+          skills and transform how you lead teams, close sales, and grow
+          your business.
+        </p>
+
+        <div class="flex justify-center mb-6 fade-up">
+          <a href="#pricing" class="bg-lcm-red text-white px-10 py-4 text-base font-medium tracking-wide uppercase hover:bg-lcm-deep-red transition-all duration-200 text-center">
+            Reserve Your Seat
+          </a>
+        </div>
+
+        <p class="text-white/40 text-sm tracking-wide fade-up">Only 50 seats available</p>
+
+        <!-- Main YouTube embed -->
+        <div class="mt-12 fade-up">
+          <div class="aspect-video bg-lcm-ink/50 border border-white/10 overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/eMmZUHJt0Tk?start=3&autoplay=1&mute=1"
+              class="w-full h-full"
+              style="border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Leadership Coaching MasterClass"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade to red -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-lcm-red to-transparent"></div>
+  </section>
+
+  <!-- ========== SOCIAL PROOF BAR ========== -->
+  <section class="bg-lcm-red py-16 md:py-20 relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.05;"><img src="public/images/bg/lcm-6.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+
+        <!-- Cohorts -->
+        <div class="flex items-center gap-5 fade-up">
+          <div class="w-14 h-14 flex items-center justify-center bg-white/15 text-white flex-shrink-0">
+            <!-- Users icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-5.447-3.724M17 20H7m10 0v-2c0-.768-.231-1.48-.63-2.076M7 20H2v-2a4 4 0 015.447-3.724M7 20v-2c0-.768.231-1.48.63-2.076M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl text-white tracking-tight">20</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide uppercase mt-0.5">Cohorts Completed</p>
+          </div>
+        </div>
+
+        <!-- Accredited -->
+        <div class="flex items-center gap-5 fade-up">
+          <div class="w-14 h-14 flex items-center justify-center bg-white/15 text-white flex-shrink-0">
+            <!-- Certificate icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl text-white tracking-tight">Intl.</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide uppercase mt-0.5">Accredited Facilitator</p>
+          </div>
+        </div>
+
+        <!-- Years -->
+        <div class="flex items-center gap-5 fade-up">
+          <div class="w-14 h-14 flex items-center justify-center bg-white/15 text-white flex-shrink-0">
+            <!-- Star icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl text-white tracking-tight">22+</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide uppercase mt-0.5">Years of Coaching</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROBLEM ========== -->
+  <section class="py-24 md:py-32 bg-lcm-cream relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.03;"><img src="public/images/bg/lcm-7.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+
+        <!-- Left -->
+        <div class="lg:col-span-2 fade-up">
+          <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">The Challenge</p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-lcm-ink">
+            You know you&rsquo;re capable of <em class="text-lcm-red italic">more.</em>
+          </h2>
+        </div>
+
+        <!-- Right -->
+        <div class="lg:col-span-3 flex flex-col justify-center fade-up">
+          <p class="text-lg md:text-xl text-lcm-ink/70 leading-relaxed mb-8 font-light">
+            You&rsquo;re driven, you have ideas, and you&rsquo;re already
+            leading in your own way. But something keeps holding you back from
+            the next level.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-px self-stretch bg-lcm-red/30 flex-shrink-0 mt-1"></div>
+              <p class="text-base md:text-lg text-lcm-ink/60 leading-relaxed">You know coaching works &mdash; but you don&rsquo;t have a clear, teachable methodology to offer clients.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-px self-stretch bg-lcm-red/30 flex-shrink-0 mt-1"></div>
+              <p class="text-base md:text-lg text-lcm-ink/60 leading-relaxed">You&rsquo;re leading people, but without a framework, it feels reactive, not intentional.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-px self-stretch bg-lcm-red/30 flex-shrink-0 mt-1"></div>
+              <p class="text-base md:text-lg text-lcm-ink/60 leading-relaxed">You want to charge premium rates as a coach or leader &mdash; but the confidence and credibility aren&rsquo;t there yet.</p>
+            </div>
+          </div>
+
+          <div class="mt-10 border-t border-lcm-rule pt-8">
+            <p class="font-display text-2xl md:text-3xl text-lcm-ink italic">That&rsquo;s exactly why LCM exists.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROMISE ========== -->
+  <section id="program" class="py-24 md:py-32 bg-lcm-ink text-white relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.04;"><img src="public/images/bg/lcm-8.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="max-w-3xl fade-up">
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-6">The Promise</p>
+        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tight mb-10">
+          In 2 days,<br />
+          <em class="text-lcm-red italic">everything</em> changes.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 mt-16">
+
+        <div class="bg-lcm-ink p-8 md:p-10 fade-up">
+          <span class="text-lcm-red/40 font-display text-6xl leading-none">01</span>
+          <h3 class="font-display text-2xl md:text-3xl mt-4 mb-4 tracking-tight">Your Coaching Framework</h3>
+          <p class="text-white/50 text-base leading-relaxed font-light">Leave with a personal coaching methodology &mdash; clear, repeatable, and ready to deploy with your first client or team.</p>
+        </div>
+
+        <div class="bg-lcm-ink p-8 md:p-10 fade-up">
+          <span class="text-lcm-red/40 font-display text-6xl leading-none">02</span>
+          <h3 class="font-display text-2xl md:text-3xl mt-4 mb-4 tracking-tight">Your Leadership Identity</h3>
+          <p class="text-white/50 text-base leading-relaxed font-light">Move from reactive management to intentional coaching leadership. Lead from a place of clarity, not pressure.</p>
+        </div>
+
+        <div class="bg-lcm-ink p-8 md:p-10 fade-up">
+          <span class="text-lcm-red/40 font-display text-6xl leading-none">03</span>
+          <h3 class="font-display text-2xl md:text-3xl mt-4 mb-4 tracking-tight">Your Professional Edge</h3>
+          <p class="text-white/50 text-base leading-relaxed font-light">Walk out with internationally accredited training, real practice hours, and the confidence to position yourself as a credible coach.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHO IS THIS FOR ========== -->
+  <section class="py-24 md:py-32 bg-lcm-red text-white relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.05;"><img src="public/images/bg/lcm-9.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="mb-16 fade-up">
+        <p class="text-white/70 font-medium text-sm tracking-[0.3em] uppercase mb-4">Is This For You?</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-white max-w-2xl">
+          Built for people who are <em class="text-white italic">ready.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+
+        <!-- Aspiring Coaches -->
+        <div class="bg-lcm-red p-8 md:p-12 group hover:bg-lcm-deep-red transition-colors duration-300 fade-up">
+          <!-- Compass icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" class="text-white/80 mb-6">
+            <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+          </svg>
+          <h3 class="font-display text-2xl md:text-3xl text-white tracking-tight mb-3">Aspiring Coaches</h3>
+          <p class="text-base text-white/60 leading-relaxed font-light max-w-[45ch]">You want to build a coaching practice but need the methodology, certification, and confidence to start.</p>
+        </div>
+
+        <!-- Leaders & Managers -->
+        <div class="bg-lcm-red p-8 md:p-12 group hover:bg-lcm-deep-red transition-colors duration-300 fade-up">
+          <!-- Building icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" class="text-white/80 mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+          <h3 class="font-display text-2xl md:text-3xl text-white tracking-tight mb-3">Leaders &amp; Managers</h3>
+          <p class="text-base text-white/60 leading-relaxed font-light max-w-[45ch]">You lead a team and want to shift from managing tasks to coaching people toward their highest potential.</p>
+        </div>
+
+        <!-- Entrepreneurs -->
+        <div class="bg-lcm-red p-8 md:p-12 group hover:bg-lcm-deep-red transition-colors duration-300 fade-up">
+          <!-- Lightbulb icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" class="text-white/80 mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+          <h3 class="font-display text-2xl md:text-3xl text-white tracking-tight mb-3">Entrepreneurs</h3>
+          <p class="text-base text-white/60 leading-relaxed font-light max-w-[45ch]">You want to add coaching as a premium skill to grow your business and serve your clients more deeply.</p>
+        </div>
+
+        <!-- Consultants & Trainers -->
+        <div class="bg-lcm-red p-8 md:p-12 group hover:bg-lcm-deep-red transition-colors duration-300 fade-up">
+          <!-- Chart icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" class="text-white/80 mb-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+          </svg>
+          <h3 class="font-display text-2xl md:text-3xl text-white tracking-tight mb-3">Consultants &amp; Trainers</h3>
+          <p class="text-base text-white/60 leading-relaxed font-light max-w-[45ch]">You want the framework and credential to differentiate yourself and command higher rates.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TAKEAWAYS ========== -->
+  <section class="py-24 md:py-32 bg-lcm-white border-y border-lcm-rule relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.03;"><img src="public/images/bg/lcm-11.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="mb-16 max-w-2xl fade-up">
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">What You Walk Away With</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-lcm-ink">
+          Not just knowledge. <em class="text-lcm-red italic">Capability.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+
+        <!-- 1 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">Personal Leadership Philosophy</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">Define your unique coaching and leadership identity &mdash; something no one else can replicate.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">Coaching Conversation Framework</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">A repeatable, structured methodology you can use with clients, teams, or direct reports.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-5.447-3.724M17 20H7m10 0v-2c0-.768-.231-1.48-.63-2.076M7 20H2v-2a4 4 0 015.447-3.724M7 20v-2c0-.768.231-1.48.63-2.076M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">Live Practice in Micro-Groups</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">Real coaching sessions with real people &mdash; not theory, but hands-on practice with feedback.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">Internationally Accredited Training</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">Training accredited to international coaching standards from a 22-year veteran facilitator.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">High-Performance Team Strategies</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">Build self-managing, high-productivity teams through coaching-led leadership.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="group fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-lcm-red/5 group-hover:bg-lcm-red/10 transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight mb-2">Student Coaching Kit</h3>
+              <p class="text-sm md:text-base text-lcm-ink/50 leading-relaxed font-light">Take home a complete coaching toolkit &mdash; frameworks, templates, and resources for your practice.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AGENDA ========== -->
+  <section class="py-24 md:py-32 bg-lcm-cream relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.03;"><img src="public/images/bg/lcm-12.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="mb-16 max-w-2xl fade-up">
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">The Experience</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-lcm-ink">
+          Two days that change <em class="text-lcm-red italic">everything.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-lcm-rule">
+
+        <!-- Day 1 -->
+        <div class="bg-lcm-cream p-8 md:p-12 lg:p-16 fade-up">
+          <div class="flex items-baseline gap-4 mb-2">
+            <span class="font-display text-6xl md:text-7xl text-lcm-red/20 leading-none">Day 1</span>
+          </div>
+          <p class="text-sm text-lcm-ink/40 tracking-wide uppercase mb-6">May 30, 2026 &middot; 9:00 AM &ndash; 6:00 PM</p>
+          <h3 class="font-display text-3xl md:text-4xl text-lcm-ink tracking-tight mb-1">Foundation</h3>
+          <p class="font-display text-xl text-lcm-ink/50 italic mb-8">Who You Are as a Leader and Coach</p>
+          <div class="space-y-4">
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Discover your personal leadership philosophy and coaching identity</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Learn the core coaching conversation framework used by internationally accredited coaches</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Practice your first real coaching session in a safe micro-group environment</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Begin building your coaching toolkit with proven frameworks and models</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="bg-lcm-cream p-8 md:p-12 lg:p-16 fade-up">
+          <div class="flex items-baseline gap-4 mb-2">
+            <span class="font-display text-6xl md:text-7xl text-lcm-red/20 leading-none">Day 2</span>
+          </div>
+          <p class="text-sm text-lcm-ink/40 tracking-wide uppercase mb-6">May 31, 2026 &middot; 9:00 AM &ndash; 6:00 PM</p>
+          <h3 class="font-display text-3xl md:text-4xl text-lcm-ink tracking-tight mb-1">Application</h3>
+          <p class="font-display text-xl text-lcm-ink/50 italic mb-8">Practice the Skills That Make Great Coaches</p>
+          <div class="space-y-4">
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Practice essential conversation skills &mdash; building rapport, active listening, and asking powerful questions</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Develop your ability to give effective feedback that drives real change</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Build emotional intelligence to lead with empathy and self-awareness</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1.5 h-1.5 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-base text-lcm-ink/60 leading-relaxed font-light">Walk away with a personal action plan for your coaching or leadership practice</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FACILITATOR ========== -->
+  <section id="facilitator" class="py-24 md:py-32 bg-lcm-ink text-white relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.04;"><img src="public/images/bg/lcm-13.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+
+        <!-- Photo -->
+        <div class="lg:col-span-2 fade-up">
+          <div class="aspect-[3/4] relative overflow-hidden border border-white/10">
+            <img src="public/images/gina-photo.jpg" alt="Coach Gina Katigbak" class="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="lg:col-span-3 flex flex-col justify-center fade-up">
+          <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">Your Facilitator</p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-8">
+            Coach Gina <em class="text-lcm-red italic">Katigbak</em>
+          </h2>
+
+          <p class="text-lg text-white/60 leading-relaxed mb-8 font-light max-w-[55ch]">
+            With over 30 years in business development, sales, and direct
+            marketing, Coach Gina has spent more than two decades transforming
+            leaders through coaching. Her passion is clear: to equip every
+            leader and aspiring coach with the skills, framework, and
+            confidence to create real impact.
+          </p>
+
+          <div class="space-y-4 mb-10">
+            <div class="flex gap-3 items-start">
+              <div class="w-1 h-1 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-sm text-white/40 leading-relaxed">Senior AVP, Leasing Strategy &amp; Operations &mdash; Shopping Center Management Corporation</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1 h-1 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-sm text-white/40 leading-relaxed">Internationally Accredited Coach</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1 h-1 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-sm text-white/40 leading-relaxed">Certified: Quantum Life Coach, Executive Coach, Performance Coach, Transformative NLP Coach</p>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-1 h-1 rounded-full bg-lcm-red mt-2.5 flex-shrink-0"></div>
+              <p class="text-sm text-white/40 leading-relaxed">22+ years facilitating workshops and coaching programs across 20 cohorts</p>
+            </div>
+          </div>
+
+          <div class="border-t border-white/10 pt-8">
+            <p class="font-display text-2xl italic text-white/80">
+              &ldquo;I don&rsquo;t just teach coaching. I create coaches who transform lives.&rdquo;
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials" class="py-24 md:py-32 bg-lcm-cream">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="mb-16 max-w-2xl fade-up">
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">From Our Graduates</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-lcm-ink">
+          Real stories. Real <em class="text-lcm-red italic">transformation.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+        <!-- Testimonial 1 — wide -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group md:col-span-2 fade-up">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="relative overflow-hidden aspect-[16/10] md:aspect-auto">
+              <img src="public/images/review-1.jpg" alt="Kaela Marie Flores - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;I realized that the solution that I am looking for came up through me. The distinction between coaching and mentoring was a game-changer &mdash; intentional questions and proven structures are essential for successful coaching sessions.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">Kaela Marie Flores</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">Organizational Development Coach</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+          <div class="flex flex-col">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="public/images/review-2.jpg" alt="Marie Joyce Mueco - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;One of the most valuable and life-changing experiences. I gained confidence, clarity, and sharpened my communication skills. I now aspire to lead with purpose and empower others.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">Marie Joyce Mueco</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">Entrepreneur &amp; Podcast Host</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+          <div class="flex flex-col">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="public/images/review-3.jpg" alt="Justin Foo - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;It was an amazing 2-day Leadership Coaching Masterclass &mdash; you made coaching for us so easy to understand. Coach Gina and her team are incredible.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">Justin Foo</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">Entrepreneur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+          <div class="flex flex-col">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="public/images/review-4.jpg" alt="AJ Garcia - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;Phenomenal and life-changing. Coach Gina&rsquo;s programs helped me discover my personal greatness and enabled me to win while assisting others in achieving positive life changes.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">AJ Garcia</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">Success Coach</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 — wide -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group md:col-span-2 fade-up">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="relative overflow-hidden aspect-[16/10] md:aspect-auto">
+              <img src="public/images/review-5.jpg" alt="Sheena Camille Gepilano-Chiang Lin - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;Proud to be 1 of 1 Million coaches trained by the one and only, Coach Gina! Grateful for the leadership development and coaching empowerment &mdash; eager for continued learning.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">Sheena Camille Gepilano-Chiang Lin</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">Sunlife Unit Manager</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+          <div class="flex flex-col">
+            <div class="relative overflow-hidden aspect-[4/3]">
+              <img src="public/images/review-6.jpg" alt="Maricel Maunahan - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-lcm-red/0 group-hover:bg-lcm-red/10 transition-colors duration-500"></div>
+            </div>
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C0392B" fill-opacity="0.15" class="mb-4">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-base md:text-lg text-lcm-ink/70 leading-relaxed font-light mb-6">&ldquo;Thank you Coach Gina for equipping us with coaching structures and practical improvement strategies. I&rsquo;m excited to implement my learnings and help more people.&rdquo;</p>
+              <div class="border-t border-lcm-rule pt-5">
+                <p class="font-medium text-lcm-ink text-sm">Maricel Maunahan</p>
+                <p class="text-xs text-lcm-ink/40 mt-0.5">AIA Philippines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section id="pricing" class="py-24 md:py-32 bg-lcm-white border-y border-lcm-rule relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.03;"><img src="public/images/bg/lcm-14.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+
+      <div class="mb-16 text-center max-w-2xl mx-auto fade-up">
+        <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">Your Investment</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-lcm-ink">
+          Invest in the leader you&rsquo;re <em class="text-lcm-red italic">becoming.</em>
+        </h2>
+      </div>
+
+      <!-- Coupon input -->
+      <div class="max-w-md mx-auto mb-12 fade-up">
+        <div class="flex items-center gap-3">
+          <div class="relative flex-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" class="absolute left-3 top-1/2 -translate-y-1/2 text-lcm-ink/30">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+            </svg>
+            <input
+              id="coupon-input"
+              type="text"
+              placeholder="Have a coupon code?"
+              class="w-full pl-10 pr-4 py-3 border border-lcm-rule bg-lcm-cream text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors"
+            />
+          </div>
+          <button
+            id="apply-coupon-btn"
+            class="px-6 py-3 bg-lcm-ink text-white text-sm font-medium tracking-wide uppercase hover:bg-lcm-ink/90 transition-colors"
+          >
+            Apply
+          </button>
+        </div>
+
+        <!-- Success message -->
+        <div id="coupon-success" class="coupon-message items-center gap-1.5 text-green-600 text-sm mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span id="coupon-success-text"></span>
+        </div>
+
+        <!-- Error message -->
+        <p id="coupon-error" class="coupon-message text-lcm-red text-sm mt-2">Invalid coupon code. Please try again.</p>
+      </div>
+
+      <!-- Pricing tiers -->
+      <div id="pricing-grid" class="grid grid-cols-1 gap-6 md:gap-8 mb-16 md:grid-cols-2 max-w-3xl mx-auto">
+
+        <!-- Early Bird (default) -->
+        <div class="relative p-8 md:p-10 border border-lcm-rule bg-lcm-cream hover:border-lcm-red/30 transition-all duration-300 fade-up">
+          <p class="text-sm font-medium tracking-wide uppercase mb-4 text-lcm-ink/40">Early Bird</p>
+          <div class="flex items-baseline gap-1 mb-2">
+            <span class="text-sm text-lcm-ink/30">PHP</span>
+            <span class="font-display text-5xl md:text-6xl tracking-tight">18,000</span>
+          </div>
+          <p class="text-sm mb-8 text-lcm-ink/40">Limited seats</p>
+          <p class="text-lcm-red text-sm font-medium mb-6">Save &#8369;2,000</p>
+          <a href="#enroll" class="block text-center py-4 text-sm font-medium tracking-wide uppercase transition-all duration-200 bg-lcm-ink text-white hover:bg-lcm-ink/90">
+            Enroll at This Rate
+          </a>
+        </div>
+
+        <!-- Regular Rate (default) -->
+        <div class="relative p-8 md:p-10 border border-lcm-rule bg-lcm-cream hover:border-lcm-red/30 transition-all duration-300 fade-up">
+          <p class="text-sm font-medium tracking-wide uppercase mb-4 text-lcm-ink/40">Regular Rate</p>
+          <div class="flex items-baseline gap-1 mb-2">
+            <span class="text-sm text-lcm-ink/30">PHP</span>
+            <span class="font-display text-5xl md:text-6xl tracking-tight">20,000</span>
+          </div>
+          <p class="text-sm mb-8 text-lcm-ink/40">Standard investment</p>
+          <a href="#enroll" class="block text-center py-4 text-sm font-medium tracking-wide uppercase transition-all duration-200 bg-lcm-ink text-white hover:bg-lcm-ink/90">
+            Enroll at This Rate
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Coupon tier (hidden until code applied) -->
+      <template id="coupon-tier-template">
+        <div id="coupon-tier" class="relative p-8 md:p-10 border border-lcm-red bg-lcm-ink text-white shadow-xl transition-all duration-300">
+          <div class="absolute -top-3 left-8 bg-lcm-red text-white text-xs font-medium tracking-wide uppercase px-4 py-1 flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Best Value
+          </div>
+          <p id="coupon-tier-name" class="text-sm font-medium tracking-wide uppercase mb-4 text-white/60"></p>
+          <div class="flex items-baseline gap-1 mb-2">
+            <span class="text-sm text-white/40">PHP</span>
+            <span class="font-display text-5xl md:text-6xl tracking-tight">15,000</span>
+          </div>
+          <p class="text-sm mb-8 text-white/40">Coupon code applied</p>
+          <p class="text-lcm-red text-sm font-medium mb-6">Save &#8369;5,000</p>
+          <a href="#enroll" class="block text-center py-4 text-sm font-medium tracking-wide uppercase transition-all duration-200 bg-lcm-red text-white hover:bg-lcm-deep-red">
+            Enroll at This Rate
+          </a>
+        </div>
+      </template>
+
+      <!-- What's included -->
+      <div class="max-w-2xl mx-auto fade-up">
+        <h3 class="font-display text-2xl text-lcm-ink text-center mb-8">Every tier includes:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">2-day live immersive workshop (9 AM - 6 PM)</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">Student Coaching Kit</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">Coaching practice sessions in micro-groups</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">Internationally accredited coaching training</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">Access to LCM alumni community</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2.5" class="mt-0.5 flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <p class="text-sm text-lcm-ink/60">Certificate of completion</p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-lcm-rule pt-8 text-center">
+          <p class="text-sm text-lcm-ink/40">
+            <span class="font-medium text-lcm-ink/60">Payment channels:</span>
+            BPI &middot; BDO &middot; GCash &middot; PayPal
+          </p>
+          <p class="text-sm text-lcm-ink/40 mt-2">Installment plans available &mdash; inquire upon registration</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== URGENCY ========== -->
+  <section class="py-20 md:py-24 bg-lcm-red text-white relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.05;"><img src="public/images/bg/lcm-15.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+      <div class="fade-up">
+        <p class="text-white/70 font-medium text-sm tracking-[0.3em] uppercase mb-6">Limited Seats Available</p>
+        <h2 class="font-display text-4xl md:text-5xl tracking-tight mb-4">
+          Cohort 20 is limited to <em class="text-white italic">50 participants.</em>
+        </h2>
+        <p class="text-white/50 text-base mb-12 max-w-lg mx-auto font-light">
+          Enrollment closes May 1, 2026 &mdash; or when all seats are filled.
+        </p>
+
+        <!-- Countdown timer -->
+        <div class="flex justify-center gap-4 md:gap-8 mb-12">
+          <div class="text-center">
+            <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 border border-white/20 flex items-center justify-center mb-2">
+              <span id="cd-days" class="font-display text-3xl md:text-5xl tracking-tight">00</span>
+            </div>
+            <p class="text-xs text-white/50 uppercase tracking-wider">Days</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 border border-white/20 flex items-center justify-center mb-2">
+              <span id="cd-hours" class="font-display text-3xl md:text-5xl tracking-tight">00</span>
+            </div>
+            <p class="text-xs text-white/50 uppercase tracking-wider">Hours</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 border border-white/20 flex items-center justify-center mb-2">
+              <span id="cd-minutes" class="font-display text-3xl md:text-5xl tracking-tight">00</span>
+            </div>
+            <p class="text-xs text-white/50 uppercase tracking-wider">Minutes</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 border border-white/20 flex items-center justify-center mb-2">
+              <span id="cd-seconds" class="font-display text-3xl md:text-5xl tracking-tight">00</span>
+            </div>
+            <p class="text-xs text-white/50 uppercase tracking-wider">Seconds</p>
+          </div>
+        </div>
+
+        <a href="#pricing" class="inline-block bg-lcm-ink text-white px-12 py-4 text-base font-medium tracking-wide uppercase hover:bg-lcm-ink/90 transition-colors duration-200">
+          Reserve Your Seat Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-24 md:py-32 bg-lcm-cream relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.03;"><img src="public/images/bg/lcm-17.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+
+        <!-- Left -->
+        <div class="lg:col-span-2 fade-up">
+          <p class="text-lcm-red font-medium text-sm tracking-[0.3em] uppercase mb-4">FAQ</p>
+          <h2 class="font-display text-4xl md:text-5xl leading-[0.95] tracking-tight text-lcm-ink">
+            Questions?<br />
+            We&rsquo;ve got <em class="text-lcm-red italic">answers.</em>
+          </h2>
+        </div>
+
+        <!-- Right: Accordion -->
+        <div class="lg:col-span-3 fade-up">
+          <div class="border-t border-lcm-rule">
+
+            <!-- FAQ 1 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-1">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">Is this right for me if I&rsquo;m completely new to coaching?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-1" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">Absolutely. LCM is designed for both beginners and experienced leaders. You&rsquo;ll get hands-on practice, a structured framework, and mentorship from Coach Gina &mdash; whether this is your first step into coaching or your next.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-2">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">I&rsquo;m already a leader at work. Is this still valuable?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-2" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">Yes &mdash; especially for you. LCM teaches coaching-led leadership, which means you&rsquo;ll shift from managing tasks to developing people. Leaders who coach their teams see higher retention, performance, and trust.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-3">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">Will I get a certificate?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-3" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">Yes. You&rsquo;ll receive a certificate of completion for the Leadership Coaching MasterClass, aligned with international coaching accreditation standards.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-4">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">What&rsquo;s the schedule and time commitment?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-4" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">It&rsquo;s a 2-day live workshop: May 30&ndash;31, 2026, from 9:00 AM to 6:00 PM each day. Come ready to be fully present &mdash; this is immersive, not passive.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-5">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">How does payment work? Is there an installment option?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-5" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">You can pay via BPI, BDO, GCash, or PayPal. Installment plans are available &mdash; simply inquire when you register and we&rsquo;ll work out a schedule that fits.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-6">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">What happens after the 2 days? Is there follow-up support?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-6" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">Yes. After completing LCM, you become part of the LCM alumni community &mdash; a network of coaches and leaders who continue to support each other&rsquo;s growth.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="border-b border-lcm-rule">
+              <button class="faq-toggle w-full flex items-center justify-between py-6 text-left group" data-target="faq-7">
+                <span class="font-display text-xl md:text-2xl text-lcm-ink tracking-tight pr-8 group-hover:text-lcm-red transition-colors">Can I register a colleague or team?</span>
+                <span class="text-lcm-red flex-shrink-0 faq-icon">
+                  <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <svg class="minus-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </button>
+              <div id="faq-7" class="faq-body">
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">Absolutely. Many organizations send teams to LCM. Contact us directly for group arrangements.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="py-24 md:py-32 bg-lcm-red text-white relative overflow-hidden">
+    <div class="section-bg-photo" style="opacity: 0.05;"><img src="public/images/bg/lcm-6.jpg" alt="" loading="lazy" /></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+      <div class="fade-up">
+        <p class="text-white/70 font-medium text-sm tracking-[0.3em] uppercase mb-6">Your Next Step</p>
+        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tight mb-6 max-w-4xl mx-auto">
+          Cohort 20 is <em class="text-white italic">waiting</em> for you.
+        </h2>
+        <p class="text-white/60 text-lg md:text-xl font-light mb-4 max-w-xl mx-auto">
+          May 30&ndash;31, 2026 &middot; Manila &middot; Only 50 seats
+        </p>
+        <p class="text-white/40 text-sm mb-12">
+          Enrollment closes May 1, 2026 &mdash; or when seats run out.
+        </p>
+        <a href="#enroll" class="inline-block bg-lcm-ink text-white px-14 py-5 text-lg font-medium tracking-wide uppercase hover:bg-lcm-ink/90 transition-all duration-200">
+          Reserve Your Seat
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ENROLLMENT MODAL ========== -->
+  <div id="enroll-overlay" class="enroll-overlay" role="dialog" aria-modal="true" aria-label="Enrollment form">
+    <div class="enroll-modal">
+
+      <!-- Close button -->
+      <div class="flex justify-end p-4 pb-0">
+        <button id="enroll-close" class="text-lcm-ink/40 hover:text-lcm-red transition-colors" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="px-8 md:px-12 pb-10">
+
+        <!-- Important Note -->
+        <div class="bg-lcm-red/5 border border-lcm-red/20 p-5 mb-8">
+          <p class="text-sm font-bold text-lcm-red uppercase tracking-wide mb-2">Important Note</p>
+          <p class="text-sm text-lcm-ink/70 leading-relaxed mb-2">
+            Enrollment must be complete on or before <strong class="text-lcm-ink">May 1, 2026</strong> in order to be allowed to participate in this training.
+          </p>
+          <p class="text-sm text-lcm-ink/70 leading-relaxed">
+            Strictly first come, first served as we have <strong class="text-lcm-ink">limited seating capacity</strong>.
+          </p>
+        </div>
+
+        <!-- Payment Details -->
+        <h3 class="font-display text-2xl md:text-3xl tracking-tight text-lcm-ink mb-6">Payment Details</h3>
+
+        <div class="space-y-5 mb-8">
+          <!-- BPI -->
+          <div class="p-4 border border-lcm-rule bg-white">
+            <p class="text-xs text-lcm-ink/40 uppercase tracking-wider font-medium mb-1">Bank of the Philippine Islands</p>
+            <p class="text-sm text-lcm-ink">Maria Regina T. Katigbak</p>
+            <p class="text-sm text-lcm-ink/60 font-mono">4049 0461 76</p>
+          </div>
+
+          <!-- BDO -->
+          <div class="p-4 border border-lcm-rule bg-white">
+            <p class="text-xs text-lcm-ink/40 uppercase tracking-wider font-medium mb-1">Banco De Oro</p>
+            <p class="text-sm text-lcm-ink">Maria Regina T. Katigbak</p>
+            <p class="text-sm text-lcm-ink/60 font-mono">0108 6001 4940</p>
+          </div>
+
+          <!-- GCash -->
+          <div class="p-4 border border-lcm-rule bg-white">
+            <p class="text-xs text-lcm-ink/40 uppercase tracking-wider font-medium mb-1">GCash</p>
+            <p class="text-sm text-lcm-ink">Maria Regina T. Katigbak</p>
+            <p class="text-sm text-lcm-ink/60 font-mono">0917 831 4196</p>
+          </div>
+
+          <!-- PayPal -->
+          <div class="p-4 border border-lcm-rule bg-white">
+            <p class="text-xs text-lcm-ink/40 uppercase tracking-wider font-medium mb-1">For Debit / Credit Card Payments</p>
+            <p class="text-sm text-lcm-ink mb-1">PayPal</p>
+            <a href="https://paypal.me/CoachGinaK" target="_blank" rel="noopener" class="text-sm text-lcm-red hover:underline">paypal.me/CoachGinaK</a>
+          </div>
+        </div>
+
+        <!-- Enrollment Form -->
+        <form id="enroll-form" class="space-y-5">
+          <h3 class="font-display text-2xl md:text-3xl tracking-tight text-lcm-ink">Confirm Your Enrollment</h3>
+
+          <!-- Full Name -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Full Name <span class="text-lcm-red">*</span></label>
+            <input type="text" name="full_name" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="Your full name" />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Email Address <span class="text-lcm-red">*</span></label>
+            <input type="email" name="email" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="you@email.com" />
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Phone Number <span class="text-lcm-red">*</span></label>
+            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="09XX XXX XXXX" />
+          </div>
+
+          <!-- Facebook Profile URL -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Facebook Profile URL</label>
+            <input type="url" name="facebook_url" class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. facebook.com/coachginakatigbak" />
+            <p class="text-xs text-lcm-ink/40 mt-1.5">So we can add you to the official LCM group chat for updates and accountability.</p>
+          </div>
+
+          <!-- Where did you send payment -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Where did you send your payment? <span class="text-lcm-red">*</span></label>
+            <select name="payment_channel" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink focus:outline-none focus:border-lcm-red/50 transition-colors appearance-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231A1A1A%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+              <option value="" disabled selected>Please select</option>
+              <option value="BPI">BPI</option>
+              <option value="BDO">BDO</option>
+              <option value="GCash">GCash</option>
+              <option value="PayPal">PayPal</option>
+            </select>
+          </div>
+
+          <!-- Deposit details -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Please specify your deposit details <span class="text-lcm-red">*</span></label>
+            <input type="text" name="deposit_details" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. Reference number, sender name, date of transfer" />
+          </div>
+
+          <!-- Amount -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Amount payment sent <span class="text-lcm-red">*</span></label>
+            <input type="text" name="amount" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. 18,000" />
+          </div>
+
+          <!-- Payment type -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Payment sent <span class="text-lcm-red">*</span></label>
+            <select name="payment_type" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink focus:outline-none focus:border-lcm-red/50 transition-colors appearance-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231A1A1A%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
+              <option value="" disabled selected>Please select</option>
+              <option value="Full Payment">Full Payment</option>
+              <option value="Partial / Installment">Partial / Installment</option>
+            </select>
+          </div>
+
+          <!-- Remarks -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Remarks</label>
+            <textarea name="remarks" rows="3" class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors resize-none" placeholder="Any additional notes (optional)"></textarea>
+          </div>
+
+          <!-- How did you hear about LCM -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">How did you hear about LCM?</label>
+            <input type="text" name="referral_source" class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. Facebook, friend, alumni" />
+          </div>
+
+          <!-- Proof of Payment -->
+          <div>
+            <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Proof of Payment <span class="text-lcm-red">*</span></label>
+            <div id="file-drop" class="file-drop p-6 text-center cursor-pointer">
+              <input type="file" id="proof-file" name="proof_of_payment" accept="image/*,.pdf" required class="hidden" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-2 text-lcm-ink/20">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0L8 8m4-4l4 4m-9 8h10a2 2 0 002-2V6"/>
+              </svg>
+              <p class="text-sm text-lcm-ink/40">Click to browse or drag &amp; drop</p>
+              <p id="file-name" class="text-sm text-lcm-red font-medium mt-2 hidden"></p>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" id="enroll-submit" class="w-full py-4 bg-lcm-red text-white text-sm font-medium tracking-wide uppercase hover:bg-lcm-deep-red transition-colors duration-200">
+            Register
+          </button>
+
+          <!-- Error/success messages -->
+          <p id="enroll-error" class="text-lcm-red text-sm text-center hidden"></p>
+          <div id="enroll-success" class="text-center hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="2" class="mx-auto mb-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="font-display text-2xl text-lcm-ink mb-2">You're enrolled!</p>
+            <p class="text-sm text-lcm-ink/60">We'll confirm your slot via email shortly.</p>
+          </div>
+        </form>
+
+        <!-- Coach Gina quote + signature -->
+        <div class="mt-10 pt-8 border-t border-lcm-rule text-center">
+          <p class="font-display text-lg md:text-xl italic text-lcm-ink/70 leading-relaxed max-w-md mx-auto mb-6">
+            &ldquo;Taking this time to honor you for your commitment to your next level in your Leadership Mastery! I am excited to share this knowledge and space with you LIVE!&rdquo;
+          </p>
+          <img src="public/images/gina-sig.png" alt="Coach Gina Katigbak signature" class="h-16 md:h-20 w-auto mx-auto" style="filter: invert(1);" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-lcm-ink border-t border-white/10 py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Brand -->
+        <div>
+          <img src="public/images/logo-full.png" alt="Leadership Coaching MasterClass" class="max-h-48 md:max-h-60 w-auto mb-4 object-contain" />
+          <p class="text-sm text-white/40 font-light max-w-[30ch]">A coaching skills training program by Coach Gina Katigbak.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <p class="text-xs text-white/40 uppercase tracking-wider mb-4 font-medium">Quick Links</p>
+          <div class="space-y-2">
+            <a href="#program" class="block text-sm text-white/50 hover:text-lcm-red transition-colors">Program</a>
+            <a href="#facilitator" class="block text-sm text-white/50 hover:text-lcm-red transition-colors">About Coach Gina</a>
+            <a href="#testimonials" class="block text-sm text-white/50 hover:text-lcm-red transition-colors">Testimonials</a>
+            <a href="#pricing" class="block text-sm text-white/50 hover:text-lcm-red transition-colors">Investment</a>
+            <a href="#faq" class="block text-sm text-white/50 hover:text-lcm-red transition-colors">FAQ</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="text-xs text-white/40 uppercase tracking-wider mb-4 font-medium">Contact</p>
+          <div class="space-y-2 text-sm text-white/50">
+            <p>info.coachgina@gmail.com</p>
+            <p>coachginakatigbak.com</p>
+            <p class="pt-2">
+              <span class="text-white/30">Follow:</span>
+              <a href="https://www.facebook.com/coachginakatigbak" target="_blank" rel="noopener noreferrer" class="hover:text-lcm-red transition-colors ml-1">Facebook</a>
+              &middot;
+              <a href="https://www.instagram.com/coachginakatigbak" target="_blank" rel="noopener noreferrer" class="hover:text-lcm-red transition-colors">Instagram</a>
+              &middot;
+              <a href="https://www.tiktok.com/@coachginakatigbak" target="_blank" rel="noopener noreferrer" class="hover:text-lcm-red transition-colors">TikTok</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-8 text-center">
+        <p class="text-xs text-white/25">
+          Leadership Coaching MasterClass &copy; <span id="footer-year"></span>. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ---- Footer year ----
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ---- Hamburger menu ----
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      iconMenu.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+
+    // Close mobile nav when a nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // ---- FAQ accordion ----
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const body = document.getElementById(targetId);
+        const plusIcon = btn.querySelector('.plus-icon');
+        const minusIcon = btn.querySelector('.minus-icon');
+        const isOpen = body.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.faq-toggle .plus-icon').forEach(i => i.classList.remove('hidden'));
+        document.querySelectorAll('.faq-toggle .minus-icon').forEach(i => i.classList.add('hidden'));
+
+        // Toggle current
+        if (!isOpen) {
+          body.classList.add('open');
+          plusIcon.classList.add('hidden');
+          minusIcon.classList.remove('hidden');
+        }
+      });
+    });
+
+    // ---- Coupon code ----
+    // A11 = Abundance Special, BT40+ = Breakthrough Rate
+    function validateCode(code) {
+      if (code === 'A11') return 'Abundance Special';
+      const btMatch = code.match(/^BT(\d+)$/);
+      if (btMatch && parseInt(btMatch[1]) >= 40) return 'Breakthrough Rate';
+      return null;
+    }
+
+    const couponInput = document.getElementById('coupon-input');
+    const applyBtn = document.getElementById('apply-coupon-btn');
+    const couponSuccess = document.getElementById('coupon-success');
+    const couponSuccessText = document.getElementById('coupon-success-text');
+    const couponError = document.getElementById('coupon-error');
+    const pricingGrid = document.getElementById('pricing-grid');
+
+    let couponApplied = false;
+
+    function applyCoupon() {
+      const code = couponInput.value.trim().toUpperCase();
+      const tierName = validateCode(code);
+
+      if (tierName) {
+        // Show success
+        couponSuccess.classList.add('show');
+        couponError.classList.remove('show');
+        couponSuccessText.textContent = tierName + ' rate unlocked!';
+
+        if (!couponApplied) {
+          couponApplied = true;
+
+          // Switch to 3-column grid
+          pricingGrid.classList.remove('md:grid-cols-2', 'max-w-3xl', 'mx-auto');
+          pricingGrid.classList.add('md:grid-cols-3');
+
+          // Insert coupon tier as first card
+          const template = document.getElementById('coupon-tier-template');
+          const clone = template.content.cloneNode(true);
+          const tierDiv = clone.querySelector('#coupon-tier');
+          tierDiv.querySelector('#coupon-tier-name').textContent = tierName;
+          // Remove template id from clone to avoid duplicate
+          tierDiv.removeAttribute('id');
+          tierDiv.id = 'coupon-tier-inserted';
+          pricingGrid.insertBefore(clone, pricingGrid.firstChild);
+        } else {
+          // Update name if different code applied
+          const insertedTier = document.getElementById('coupon-tier-inserted');
+          if (insertedTier) {
+            insertedTier.querySelector('[id]') // name element
+          }
+          const nameEl = document.querySelector('#coupon-tier-inserted p:first-child');
+          if (nameEl) nameEl.textContent = tierName;
+        }
+      } else {
+        couponError.classList.add('show');
+        couponSuccess.classList.remove('show');
+      }
+    }
+
+    applyBtn.addEventListener('click', applyCoupon);
+    couponInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') applyCoupon();
+      couponError.classList.remove('show');
+    });
+
+    // ---- Countdown timer ----
+    const deadline = new Date('2026-05-01T23:59:59+08:00');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = deadline.getTime() - now;
+
+      if (distance <= 0) {
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-minutes').textContent = '00';
+        document.getElementById('cd-seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ---- Enrollment Modal ----
+    const enrollOverlay = document.getElementById('enroll-overlay');
+    const enrollClose = document.getElementById('enroll-close');
+    const enrollForm = document.getElementById('enroll-form');
+    const enrollSubmit = document.getElementById('enroll-submit');
+    const enrollError = document.getElementById('enroll-error');
+    const enrollSuccess = document.getElementById('enroll-success');
+    const fileDrop = document.getElementById('file-drop');
+    const proofFile = document.getElementById('proof-file');
+    const fileName = document.getElementById('file-name');
+
+    // Open modal — any link with href="#enroll"
+    document.querySelectorAll('a[href="#enroll"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        enrollOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal
+    function closeEnrollModal() {
+      enrollOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    enrollClose.addEventListener('click', closeEnrollModal);
+    enrollOverlay.addEventListener('click', (e) => {
+      if (e.target === enrollOverlay) closeEnrollModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && enrollOverlay.classList.contains('open')) closeEnrollModal();
+    });
+
+    // File upload handling
+    fileDrop.addEventListener('click', () => proofFile.click());
+    proofFile.addEventListener('change', () => {
+      if (proofFile.files.length) {
+        fileName.textContent = proofFile.files[0].name;
+        fileName.classList.remove('hidden');
+      }
+    });
+    fileDrop.addEventListener('dragover', (e) => { e.preventDefault(); fileDrop.classList.add('dragover'); });
+    fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
+    fileDrop.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileDrop.classList.remove('dragover');
+      if (e.dataTransfer.files.length) {
+        proofFile.files = e.dataTransfer.files;
+        fileName.textContent = e.dataTransfer.files[0].name;
+        fileName.classList.remove('hidden');
+      }
+    });
+
+    // ---- Supabase config (replace with your project values) ----
+    const SUPABASE_URL = 'https://hjfuxwytpyqhuvrbssds.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_a3CC57g5ihWuO0Ne0Hl7Nw_ZJrCqs2L';
+
+    enrollForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      enrollError.classList.add('hidden');
+
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+        enrollError.textContent = 'Enrollment system is being set up. Please try again shortly.';
+        enrollError.classList.remove('hidden');
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(enrollForm).entries());
+      const file = proofFile.files[0];
+
+      enrollSubmit.disabled = true;
+      enrollSubmit.textContent = 'Submitting...';
+
+      try {
+        // 1. Upload proof of payment to Supabase Storage
+        let proofUrl = '';
+        if (file) {
+          const ext = file.name.split('.').pop();
+          const path = `proofs/${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
+
+          const uploadRes = await fetch(`${SUPABASE_URL}/storage/v1/object/proof-of-payment/${path}`, {
+            method: 'POST',
+            headers: {
+              'apikey': SUPABASE_ANON_KEY,
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Content-Type': file.type,
+            },
+            body: file,
+          });
+
+          if (!uploadRes.ok) throw new Error('File upload failed');
+          proofUrl = `${SUPABASE_URL}/storage/v1/object/public/proof-of-payment/${path}`;
+        }
+
+        // 2. Insert enrollment record
+        const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/enrollments-may3031`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal',
+          },
+          body: JSON.stringify({
+            full_name: data.full_name,
+            email: data.email,
+            phone: data.phone,
+            payment_channel: data.payment_channel,
+            deposit_details: data.deposit_details,
+            amount: data.amount,
+            payment_type: data.payment_type,
+            remarks: data.remarks || null,
+            referral_source: data.referral_source || null,
+            proof_url: proofUrl,
+          }),
+        });
+
+        if (!insertRes.ok) throw new Error('Submission failed');
+
+        // Show success
+        enrollForm.classList.add('hidden');
+        enrollSuccess.classList.remove('hidden');
+
+      } catch (err) {
+        enrollError.textContent = 'Something went wrong. Please try again or contact info.coachgina@gmail.com';
+        enrollError.classList.remove('hidden');
+      } finally {
+        enrollSubmit.disabled = false;
+        enrollSubmit.textContent = 'Register';
+      }
+    });
+
+    // ---- Scroll-triggered fade-up (Intersection Observer) ----
+    const fadeEls = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Trigger elements already in viewport on load
+    setTimeout(() => {
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          el.classList.add('animate-in');
+        }
+      });
+    }, 100);
+  </script>
+
+</body>
+</html>
