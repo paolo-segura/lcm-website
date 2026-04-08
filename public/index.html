@@ -953,7 +953,6 @@
             <span class="font-medium text-lcm-ink/60">Payment channels:</span>
             BPI &middot; BDO &middot; GCash &middot; PayPal
           </p>
-          <p class="text-sm text-lcm-ink/40 mt-2">Installment plans available &mdash; inquire upon registration</p>
         </div>
       </div>
 
@@ -1093,7 +1092,7 @@
                 </span>
               </button>
               <div id="faq-5" class="faq-body">
-                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">You can pay via BPI, BDO, GCash, or PayPal. Installment plans are available &mdash; simply inquire when you register and we&rsquo;ll work out a schedule that fits.</p>
+                <p class="text-base text-lcm-ink/60 leading-relaxed font-light pb-6 max-w-[65ch]">You can pay via BPI, BDO, GCash, or PayPal. Full payment is required upon registration. If you have questions about payment, feel free to reach out when you register.</p>
               </div>
             </div>
 
@@ -1146,7 +1145,7 @@
         <p class="text-white/40 text-sm mb-12">
           Enrollment closes May 1, 2026 &mdash; or when seats run out.
         </p>
-        <a href="#enroll" class="inline-block bg-lcm-ink text-white px-14 py-5 text-lg font-medium tracking-wide uppercase hover:bg-lcm-ink/90 transition-all duration-200">
+        <a href="#pricing" class="inline-block bg-lcm-ink text-white px-14 py-5 text-lg font-medium tracking-wide uppercase hover:bg-lcm-ink/90 transition-all duration-200">
           Reserve Your Seat
         </a>
       </div>
@@ -1271,7 +1270,6 @@
             <select name="payment_type" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink focus:outline-none focus:border-lcm-red/50 transition-colors appearance-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231A1A1A%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
               <option value="" disabled selected>Please select</option>
               <option value="Full Payment">Full Payment</option>
-              <option value="Partial / Installment">Partial / Installment</option>
             </select>
           </div>
 
@@ -1617,7 +1615,7 @@
         }
 
         // 2. Insert enrollment record
-        const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/enrollments-may3031`, {
+        const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/lcm-enrollments-may3031`, {
           method: 'POST',
           headers: {
             'apikey': SUPABASE_ANON_KEY,
