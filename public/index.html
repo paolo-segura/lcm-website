@@ -20,6 +20,22 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper.js for testimonials carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <style>
+    .testimonial-swiper { padding-bottom: 3.5rem !important; }
+    .testimonial-swiper .swiper-slide { height: auto; display: flex; }
+    .testimonial-swiper .swiper-slide > div { width: 100%; }
+    .testimonial-swiper .swiper-pagination-bullet {
+      width: 8px; height: 8px; background: #1A1A1A; opacity: 0.2;
+      transition: all 0.3s ease;
+    }
+    .testimonial-swiper .swiper-pagination-bullet-active {
+      background: #C0392B; opacity: 1; width: 24px; border-radius: 4px;
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -693,10 +709,11 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="swiper testimonial-swiper fade-up">
+        <div class="swiper-wrapper">
 
         <!-- Testimonial 1 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-1.jpg" alt="Kaela Marie Flores - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -713,10 +730,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <!-- Testimonial 2 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-2.jpg" alt="Marie Joyce Mueco - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -733,10 +750,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <!-- Testimonial 3 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-3.jpg" alt="Justin Foo - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -753,10 +770,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <!-- Testimonial 4 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-4.jpg" alt="AJ Garcia - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -773,10 +790,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <!-- Testimonial 5 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-5.jpg" alt="Sheena Camille Gepilano-Chiang Lin - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -793,10 +810,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         <!-- Testimonial 6 -->
-        <div class="bg-lcm-white border border-lcm-rule overflow-hidden group fade-up">
+        <div class="swiper-slide"><div class="bg-lcm-white border border-lcm-rule overflow-hidden group h-full">
           <div class="flex flex-col">
             <div class="relative overflow-hidden aspect-[4/3]">
               <img src="images/review-6.jpg" alt="Maricel Maunahan - LCM Graduate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -813,8 +830,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -1522,6 +1541,23 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // ---- Testimonials carousel ----
+    function initTestimonialSwiper() {
+      if (typeof Swiper === 'undefined') { setTimeout(initTestimonialSwiper, 100); return; }
+      new Swiper('.testimonial-swiper', {
+        loop: true,
+        spaceBetween: 24,
+        autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: {
+          0:    { slidesPerView: 1 },
+          768:  { slidesPerView: 2, spaceBetween: 28 },
+          1024: { slidesPerView: 3, spaceBetween: 32 }
+        }
+      });
+    }
+    initTestimonialSwiper();
 
     // ---- Enrollment Modal ----
     const enrollOverlay = document.getElementById('enroll-overlay');
