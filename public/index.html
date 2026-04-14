@@ -35,6 +35,22 @@
     .testimonial-swiper .swiper-pagination-bullet-active {
       background: #C0392B; opacity: 1; width: 24px; border-radius: 4px;
     }
+    .testimonial-swiper .swiper-button-prev,
+    .testimonial-swiper .swiper-button-next {
+      width: 44px; height: 44px; background: #1A1A1A; color: #fff;
+      border-radius: 9999px; top: 50%; margin-top: -22px;
+      transition: background 0.2s ease;
+    }
+    .testimonial-swiper .swiper-button-prev:hover,
+    .testimonial-swiper .swiper-button-next:hover { background: #C0392B; }
+    .testimonial-swiper .swiper-button-prev::after,
+    .testimonial-swiper .swiper-button-next::after { font-size: 16px; font-weight: 700; }
+    .testimonial-swiper .swiper-button-prev { left: -8px; }
+    .testimonial-swiper .swiper-button-next { right: -8px; }
+    @media (min-width: 768px) {
+      .testimonial-swiper .swiper-button-prev { left: -22px; }
+      .testimonial-swiper .swiper-button-next { right: -22px; }
+    }
   </style>
   <script>
     tailwind.config = {
@@ -834,6 +850,8 @@
 
         </div>
         <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </section>
@@ -1550,6 +1568,7 @@
         spaceBetween: 24,
         autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
         pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { prevEl: '.swiper-button-prev', nextEl: '.swiper-button-next' },
         breakpoints: {
           0:    { slidesPerView: 1 },
           768:  { slidesPerView: 2, spaceBetween: 28 },
