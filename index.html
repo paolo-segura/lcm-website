@@ -1492,14 +1492,14 @@
         // Show success
         couponSuccess.classList.add('show');
         couponError.classList.remove('show');
-        couponSuccessText.textContent = tierName + ' rate unlocked!';
+        couponSuccessText.textContent = tierName + ' unlocked!';
 
         if (!couponApplied) {
           couponApplied = true;
 
-          // Switch to 3-column grid
-          pricingGrid.classList.remove('md:grid-cols-2', 'max-w-3xl', 'mx-auto');
-          pricingGrid.classList.add('md:grid-cols-3');
+          // Widen container and switch to 2-column grid (coupon tier + early bird)
+          pricingGrid.classList.remove('max-w-md');
+          pricingGrid.classList.add('max-w-3xl', 'md:grid-cols-2');
 
           // Insert coupon tier as first card
           const template = document.getElementById('coupon-tier-template');
@@ -1511,12 +1511,8 @@
           tierDiv.id = 'coupon-tier-inserted';
           pricingGrid.insertBefore(clone, pricingGrid.firstChild);
         } else {
-          // Update name if different code applied
-          const insertedTier = document.getElementById('coupon-tier-inserted');
-          if (insertedTier) {
-            insertedTier.querySelector('[id]') // name element
-          }
-          const nameEl = document.querySelector('#coupon-tier-inserted p:first-child');
+          // Update name if a different code is applied over the existing one
+          const nameEl = document.getElementById('coupon-tier-name');
           if (nameEl) nameEl.textContent = tierName;
         }
       } else {
@@ -1589,13 +1585,13 @@
     const proofFile = document.getElementById('proof-file');
     const fileName = document.getElementById('file-name');
 
-    // Open modal — any link with href="#enroll"
-    document.querySelectorAll('a[href="#enroll"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        enrollOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
+    // Open modal — delegated so dynamically-inserted enroll buttons (e.g. coupon tier) also bind
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href="#enroll"]');
+      if (!link) return;
+      e.preventDefault();
+      enrollOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
     });
 
     // Close modal
