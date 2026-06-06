@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Your Inbox | Coach Gina Katigbak</title>
+  <meta name="description" content="Your copy of The 7-Question Coaching Conversation is on its way." />
+  <!-- Prevent indexing of the thanks page -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lcm-red': '#C0392B',
+            'lcm-deep-red': '#8B1A1A',
+            'lcm-ink': '#1A1A1A',
+            'lcm-cream': '#FAFAF8',
+            'lcm-white': '#FFFFFF',
+            'lcm-rule': '#E8E0D8',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background-color: #FAFAF8; color: #1A1A1A; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-lcm-cream">
+
+  <!-- ========== HEADER ========== -->
+  <header class="border-b border-lcm-rule bg-lcm-cream">
+    <div class="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-lcm-ink/50">Coach Gina Katigbak</p>
+      <a href="/" class="text-xs text-lcm-ink/40 hover:text-lcm-red transition-colors tracking-wide">leadershipcoachingmasterclass.com</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
+
+    <!-- Big italic red heading -->
+    <div class="fade-up mb-6">
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl italic text-lcm-red leading-tight tracking-tight">
+        It's on its way.
+      </h1>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="text-lg md:text-xl text-lcm-ink/70 mb-4 fade-up">
+      Check your inbox in the next minute or two.
+    </p>
+
+    <!-- Personalized email line (populated by JS) -->
+    <p id="sent-to-line" class="text-sm text-lcm-ink/40 mb-12 fade-up hidden">
+      Sent to <span id="sent-to-email" class="font-medium text-lcm-ink/60"></span>
+    </p>
+
+  </section>
+
+  <!-- ========== DIVIDER ========== -->
+  <div class="max-w-3xl mx-auto px-6">
+    <hr class="border-lcm-rule" />
+  </div>
+
+  <!-- ========== BODY ========== -->
+  <section class="max-w-3xl mx-auto px-6 py-12 md:py-16 fade-up">
+    <div class="max-w-[55ch] mx-auto text-center">
+      <p class="text-base md:text-lg text-lcm-ink/60 leading-relaxed">
+        The PDF link is just below — you can download it right now.
+        We also sent it to your inbox so you can find it later.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== DOWNLOAD BUTTON ========== -->
+  <section class="max-w-3xl mx-auto px-6 pb-16 text-center fade-up">
+    <a
+      href="/the-7-question-coaching-conversation.pdf"
+      download="The-7-Question-Coaching-Conversation-Coach-Gina.pdf"
+      class="inline-block py-4 px-10 bg-lcm-red text-white text-sm font-medium tracking-wide uppercase hover:bg-lcm-deep-red transition-colors duration-200"
+    >
+      Download The 7-Question Coaching Conversation
+    </a>
+  </section>
+
+  <!-- ========== DIVIDER ========== -->
+  <div class="max-w-3xl mx-auto px-6">
+    <hr class="border-lcm-rule" />
+  </div>
+
+  <!-- ========== SOFT SECONDARY CTA ========== -->
+  <section class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center fade-up">
+    <p class="text-base md:text-lg text-lcm-ink/60 leading-relaxed max-w-[52ch] mx-auto mb-6">
+      If you want the full craft — Cohort 21 of the Leadership Coaching MasterClass
+      is where that work happens. Two days. Live. Pasig.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center gap-1 text-sm font-medium text-lcm-red hover:text-lcm-deep-red transition-colors border-b border-lcm-red/30 hover:border-lcm-deep-red pb-0.5"
+    >
+      Learn more &rarr;
+    </a>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-lcm-rule bg-lcm-cream">
+    <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+      <p class="text-xs text-lcm-ink/35 tracking-wide">
+        @coachginakatigbak &middot; <a href="/" class="hover:text-lcm-red transition-colors">leadershipcoachingmasterclass.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ---- Personalize with email from URL param ----
+    (function personalizeEmail() {
+      const params = new URLSearchParams(window.location.search);
+      const email = params.get('email');
+      if (email) {
+        const emailEl  = document.getElementById('sent-to-email');
+        const lineEl   = document.getElementById('sent-to-line');
+        emailEl.textContent = decodeURIComponent(email);
+        lineEl.classList.remove('hidden');
+      }
+    })();
+
+    // ---- Scroll-triggered fade-up ----
+    (function initFadeUp() {
+      const els = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(el => observer.observe(el));
+    })();
+  </script>
+
+</body>
+</html>
