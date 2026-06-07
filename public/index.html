@@ -901,18 +901,16 @@
       <!-- Pricing tier -->
       <div id="pricing-grid" class="grid grid-cols-1 gap-6 md:gap-8 mb-16 max-w-md mx-auto">
 
-        <!-- Early Bird -->
+        <!-- Investment -->
         <div class="relative p-8 md:p-10 border border-lcm-rule bg-lcm-cream hover:border-lcm-red/30 transition-all duration-300 fade-up">
-          <p class="text-sm font-medium tracking-wide uppercase mb-4 text-lcm-ink/40">Early Bird Rate</p>
+          <p class="text-sm font-medium tracking-wide uppercase mb-4 text-lcm-ink/40">Investment</p>
           <div class="flex items-baseline gap-2 mb-1">
             <span class="text-sm text-lcm-ink/30">PHP</span>
-            <span class="font-display text-5xl md:text-6xl tracking-tight">18,000</span>
+            <span class="font-display text-5xl md:text-6xl tracking-tight">20,000</span>
           </div>
-          <p class="text-sm mb-2 text-lcm-ink/30 line-through">PHP 20,000</p>
-          <p class="text-lcm-red text-sm font-medium mb-6">Save 10% &mdash; Early bird ends June 18</p>
-          <p class="text-sm mb-8 text-lcm-ink/40">Only 10 seats available</p>
+          <p class="text-sm mb-8 mt-3 text-lcm-ink/40">Only 10 seats available</p>
           <a href="#enroll" class="block text-center py-4 text-sm font-medium tracking-wide uppercase transition-all duration-200 bg-lcm-ink text-white hover:bg-lcm-ink/90">
-            Enroll at This Rate
+            Reserve Your Seat
           </a>
         </div>
 
@@ -1006,10 +1004,10 @@
           Enrollment closes July 1, 2026 &mdash; or when all seats are filled.
         </p>
         <p class="text-white/70 text-sm font-medium mb-12 max-w-lg mx-auto">
-          Early bird rate ends June 18 &mdash; don&rsquo;t miss the savings.
+          Time remaining to reserve one of the 10 seats:
         </p>
 
-        <!-- Countdown timer (early bird deadline) -->
+        <!-- Countdown timer (enrollment close) -->
         <div class="flex justify-center gap-4 md:gap-8 mb-12">
           <div class="text-center">
             <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 border border-white/20 flex items-center justify-center mb-2">
@@ -1298,7 +1296,7 @@
           <!-- Amount -->
           <div>
             <label class="block text-sm font-medium text-lcm-ink/70 mb-1">Amount payment sent <span class="text-lcm-red">*</span></label>
-            <input type="text" name="amount" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. 18,000" />
+            <input type="text" name="amount" required class="w-full px-4 py-3 border border-lcm-rule bg-white text-sm text-lcm-ink placeholder:text-lcm-ink/30 focus:outline-none focus:border-lcm-red/50 transition-colors" placeholder="e.g. 20,000" />
           </div>
 
           <!-- Payment type -->
@@ -1493,7 +1491,7 @@
         if (!couponApplied) {
           couponApplied = true;
 
-          // Widen container and switch to 2-column grid (coupon tier + early bird)
+          // Widen container and switch to 2-column grid (coupon tier + investment)
           pricingGrid.classList.remove('max-w-md');
           pricingGrid.classList.add('max-w-3xl', 'md:grid-cols-2');
 
@@ -1524,7 +1522,7 @@
     });
 
     // ---- Countdown timer ----
-    const deadline = new Date('2026-06-18T23:59:59+08:00');
+    const deadline = new Date('2026-07-01T23:59:59+08:00');
 
     function updateCountdown() {
       const now = new Date().getTime();
